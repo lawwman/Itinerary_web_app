@@ -9,15 +9,133 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
 
-    <title>Hello, world!</title>
+    <title>Itinerary Planner</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
 
+    <div class="container-fluid">
+
+      <div>
+        <nav class="navbar navbar-light bg-light mb-3">
+          <span class="navbar-brand mb-0 h1">Itinerary Planner</span>
+        </nav>
+      </div>
+
+      <div class="mb-3">
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#add_event_div" aria-expanded="false" aria-controls="add_event_div">
+          create new event
+        </button>
+      </div>
+
+      <div class="collapse mb-5" id="add_event_div">
+        <form id="create_event">
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="eventInput">Event Name</label>
+              <input type="text" class="form-control" id="eventInput" placeholder="Name of event. E.g. Going to Nara Park.">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="locationInput">Location</label>
+              <input type="text" class="form-control" id="locationInput" placeholder="Location. E.g. Nara Park">
+            </div>
+          </div>
+          <div class="form-group  col-md-4">
+            <label for="durationInput">Duration</label>
+            <select id="durationInput" class="form-control">
+              <option selected>1 hour</option>
+              <option>2 hours</option>
+              <option>3 hours</option>
+              <option>4 hours</option>
+              <option>5 hours</option>
+              <option>6 hours</option>
+              <option>7 hours</option>
+              <option>8 hours</option>
+              <option>9 hours</option>
+              <option>10 hours</option>
+              <option>11 hours</option>
+              <option>12 hours</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Add new event</button>
+        </form>
+      </div>
+
+      <div>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">0600</th>
+              <th scope="col">0700</th>
+              <th scope="col">0800</th>
+              <th scope="col">0900</th>
+              <th scope="col">1000</th>
+              <th scope="col">1100</th>
+              <th scope="col">1200</th>
+              <th scope="col">1300</th>
+              <th scope="col">1400</th>
+              <th scope="col">1500</th>
+              <th scope="col">1600</th>
+              <th scope="col">1700</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Monday</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>              
+            </tr>
+            <tr>
+              <th scope="row">Tuesday</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>  
+            </tr>
+            <tr>
+              <th scope="row">Wednesday</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td> 
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
   </body>
 </html>
