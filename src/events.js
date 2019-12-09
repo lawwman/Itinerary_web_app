@@ -14,3 +14,7 @@ function add_event(e) {
     
     
 }
+
+$(window).on('load',function(){
+    $('#myModal').modal('show');
+});
