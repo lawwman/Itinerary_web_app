@@ -24,8 +24,8 @@
               <li class="nav-item"><a class="nav-link" href="events.html">Events list</a></li>
 
               <li class="nav-item">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#setDurationModal">
-                    Set duration
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tripSettingModal">
+                    Trip Settings
                 </button>
               </li>
             </ul>
@@ -34,11 +34,11 @@
       </div>
 
       <!-- Modal -->
-      <div class="modal fade" id="setDurationModal" tabindex="-1" role="dialog" aria-labelledby="setDurationLabel" aria-hidden="true">
+      <div class="modal fade" id="tripSettingModal" tabindex="-1" role="dialog" aria-labelledby="tripSettingLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="setDurationLabel">Set duration of travel</h5>
+              <h5 class="modal-title" id="tripSettingLabel">Set duration of travel</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -60,8 +60,18 @@
           </div>
         </div>
       </div>
+      
+      <!-- No Duration warning. Hide if duration has been set. -->
+      <div id="no_duration_warning">
+        <div class="jumbotron jumbotron-fluid">
+          <div class="container">
+            <h1 class="display-4">No Duration Set.</h1>
+            <p class="lead">Please set a duration for your trip in the Trip Settings window.</p>
+          </div>
+        </div>
+      </div>
 
-      <div>
+      <div id="schedule">
         <table class="table table-bordered">
           <thead>
             <tr>
