@@ -14,6 +14,7 @@ function serve() {
 
     watch('src/scss/*.scss', series(convert_sass));
     watch('src/index.html').on("change", browserSync.reload);
+    watch('src/main.js').on("change", browserSync.reload);
 }
 
 exports.convert_sass = convert_sass;
