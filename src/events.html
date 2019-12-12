@@ -11,6 +11,7 @@
 
     <title>Itinerary Planner</title>
   </head>
+
   <body>
 
     <div class="container-fluid">
@@ -81,6 +82,10 @@
               <label for="locationInput">Location</label>
               <input type="text" class="form-control" id="locationInput" placeholder="Location. E.g. Nara Park">
             </div>
+            <div class="form-group col-md-4">
+                <label for="descriptionInput">Event Description</label>
+                <input type="text" class="form-control" id="descriptionInput" placeholder="look at deers.">
+              </div>
           </div>
           <div class="form-group  col-md-4">
             <label for="durationInput">Duration</label>
@@ -99,9 +104,26 @@
               <option>12 hours</option>
             </select>
           </div>
-
           <button type="submit" class="btn btn-primary">Add new event</button>
         </form>
+      </div>
+
+
+      <div class="container-fluid mt-4">
+        <div class="row" id="event_card_container">
+
+          <div class="col-auto mb-3">
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">Event name</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Event location</h6>
+                <p class="card-text">Some description for the event.</p>
+                <h6 class="card-subtitle mb-2 text-muted">Event duration</h6>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
 
     </div>

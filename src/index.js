@@ -7,6 +7,4 @@ $(window).on('load',function(){
     } else {
         $('#no_duration_warning').hide();
     }
-
-    $('#myModal').modal('show');
-}); 
+});
