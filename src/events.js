@@ -1,3 +1,5 @@
+event_ids = [0];
+
 // Add new event
 function add_event(e) {
 
@@ -23,6 +25,7 @@ function add_event(e) {
         events_list.push(event_item);
     }
     localStorage.setItem("events_list", JSON.stringify(events_list));
+    console.log(event_ids);
 }
 
 function create_event_card(name, location, duration, description) {
@@ -58,4 +61,9 @@ $(window).on('load',function(){
 
 // Add listener to create event form
 document.getElementById("create_event").addEventListener('submit', add_event);
+
+// function to read local storage and set up the event cards if any (on load).
+// function to create the list of card ids (on load).
+// remove event card should also remove from the local storage as well.
+// when clear all settings function is called, should just refresh the page.
 
