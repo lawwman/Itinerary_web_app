@@ -31,7 +31,7 @@ function saveChangesToTripSettings() {
 }
 
 function displayTripSettings() {
-    console.log("hello")
+
     if (localStorage.getItem("trip_duration") != null) {
 
         var trip_duration = localStorage.getItem("trip_duration").split("_");
@@ -45,12 +45,14 @@ function displayTripSettings() {
 
 function clearAllSettings() {
     window.localStorage.clear();
-    
+
     // It is the index.html calling
     if (document.getElementById("no_duration_warning") != null) {
         $('#schedule').hide();
         $('#no_duration_warning').show();
     }
+
+    location.reload();
 }
 
 displayTripSettings();
