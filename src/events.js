@@ -18,6 +18,7 @@ function create_event_card(name, location, duration, description) {
   const div = document.createElement('div');
 
   div.className = 'col-auto mb-3';
+  div.id = 3;
 
   div.innerHTML = `
     <div class="card" style="width: 18rem;">
@@ -26,10 +27,16 @@ function create_event_card(name, location, duration, description) {
         <h6 class="card-subtitle mb-2 text-muted">` + location + `</h6>
         <p class="card-text">` + description + `</p>
         <h6 class="card-subtitle mb-2 text-muted">` + duration + `</h6>
+        <button type="button" class="btn btn-danger btn-sm float-right"  onclick="remove_event_card('` + div.id + `')">Delete event</button>
       </div>
     </div>`
 
   document.getElementById('event_card_container').appendChild(div);
+}
+
+function remove_event_card(event_id) {
+  var element = document.getElementById(event_id);
+  element.parentNode.removeChild(element);
 }
 
 
