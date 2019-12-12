@@ -21,6 +21,7 @@ function saveChangesToTripSettings() {
             var trip_duration = document.getElementById('startDate').value + "_" + document.getElementById('endDate').value;
             window.localStorage.setItem("trip_duration", trip_duration);
 
+            // It is the index.html calling
             if (document.getElementById("no_duration_warning") != null) {
                 $('#schedule').show();
                 $('#no_duration_warning').hide();
@@ -44,7 +45,8 @@ function displayTripSettings() {
 
 function clearAllSettings() {
     window.localStorage.clear();
-
+    
+    // It is the index.html calling
     if (document.getElementById("no_duration_warning") != null) {
         $('#schedule').hide();
         $('#no_duration_warning').show();
