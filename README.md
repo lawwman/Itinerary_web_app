@@ -16,8 +16,10 @@ Not neccesary but helpful in development.
 
 The "gulp" command from the command prompt will search for gulpfile.js and run it.
 
-Resources I used:
+### Resources I used:
 https://gulpjs.com/docs/en/getting-started/quick-start  - useful to quickly get into development
+
 https://gulpjs.com/docs/en/api/concepts                 - API and concepts.
+
 https://www.youtube.com/watch?v=LYbt50dhTko             - useful video is summarizing uses of gulp and using it with SASS. However do not follow too closely. The code used is a little deprecated. Just follow the API on the gulpjs website.
 
