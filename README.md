@@ -3,11 +3,28 @@
 ## notes about local storage
 keys = [trip_duration, events_list]
 
+## Technologies used
+
+Bootstrap CSS for style.
+Gulp, browser-sync for development convenience.
+Jquery - For client side code and it is also a requirement of Bootstrap.
+
 ## Setting up
 
 Install Node JS. NPM comes with node.
 run "npm install --global gulp cli" to install gulp globally (it also sets it in the path variable). We are now able to run the "gulp" command.
 run "npm install" in the same folder as the package.json to install the required packages.
+
+
+## Bootstrap 4
+
+I used bootstrap for the styling of the web app.
+
+### Resources I used:
+https://getbootstrap.com/docs/4.4/getting-started/introduction/
+https://getbootstrap.com/docs/4.4/components/alerts/
+https://www.digitalocean.com/community/tutorials/an-introduction-to-jquery
+
 
 ## Gulp
 

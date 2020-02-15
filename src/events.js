@@ -1,12 +1,9 @@
 events_ids = [];
 
 function create_event_card(event_id, name, location, duration, description) {
-
   const div = document.createElement('div');
-
   div.className = 'col-auto mb-3';
   div.id = event_id;
-
   div.innerHTML = `
     <div class="card" style="width: 18rem;">
       <div class="card-body">
