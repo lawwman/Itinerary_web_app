@@ -1,0 +1,16 @@
+$hover_color: rgb(235, 233, 233);
+
+
+td:hover {
+    background-color: $hover_color;
+}
+
+.eventDate:hover {
+    background-color: $hover_color;
+}
+
+.table-wrapper {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}

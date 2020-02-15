@@ -41,3 +41,11 @@ https://gulpjs.com/docs/en/api/concepts                 - API and concepts.
 
 https://www.youtube.com/watch?v=LYbt50dhTko             - useful video is summarizing uses of gulp and using it with SASS. However do not follow too closely. The code used is a little deprecated. Just follow the API on the gulpjs website.
 
+## SASS
+
+
+### Resources I used:
+https://www.w3schools.com/Css/default.asp
+https://sass-lang.com/guide
+https://www.youtube.com/watch?v=Zz6eOVaaelI
+

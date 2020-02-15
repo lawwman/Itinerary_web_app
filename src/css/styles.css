@@ -1,0 +1,10 @@
+td:hover {
+  background-color: #ebe9e9; }
+
+.eventDate:hover {
+  background-color: #ebe9e9; }
+
+.table-wrapper {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap; }
