@@ -16,7 +16,7 @@ run "npm install --global gulp cli" to install gulp globally (it also sets it in
 run "npm install" in the same folder as the package.json to install the required packages.
 
 
-## Bootstrap 4
+## Bootstrap 4 and JQuery
 
 I used bootstrap for the styling of the web app.
 
@@ -24,6 +24,7 @@ I used bootstrap for the styling of the web app.
 https://getbootstrap.com/docs/4.4/getting-started/introduction/
 https://getbootstrap.com/docs/4.4/components/alerts/
 https://www.digitalocean.com/community/tutorials/an-introduction-to-jquery
+https://www.w3schools.com/jquery/
 
 
 ## Gulp
