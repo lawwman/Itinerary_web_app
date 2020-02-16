@@ -1,6 +1,6 @@
 colNum = 17
 dates = []
-selectedEventDates = []
+selectedEventDates = -1
 
 function addRow(id) {
     const tr = document.createElement('tr');
@@ -17,33 +17,48 @@ function setupSchedule() {
 }
 
 
-function createDateSelector(id) {
-    if (selectedEventDates.includes(id)) return;
-    selectedEventDates.push(id);
+function createDateInput(id) {
+    if (selectedEventDates == id) { // remove date input
+        selectedEventDates = -1;
+        var innerHTML = document.getElementById(id).innerHTML;
+        /* Get the input date from the innerHTML. */
+        var date = innerHTML.split(`placeholder="`)[1];
+        date = date.replace(`"></div></div>`, "");
+
+        document.getElementById(id).innerHTML = date;
+
+        return;
+    }
+    selectedEventDates = id;
+
+    var date = document.getElementById(id).innerHTML;
+    document.getElementById(id).innerHTML = "";
 
     const div = document.createElement('div');
-    div.className = "form-row";
-    div.id = "dateSelector";
+    div.className = "form-group";
+    div.id = "dateInputForm";
     document.getElementById(id).appendChild(div);
 
-    const dayDiv = document.createElement('div');
-    dayDiv.className = "form-group col-md-6";
-    var innerHTML = `<label for="inputState">Day</label><select id="inputState" class="form-control"><option selected>Choose...</option>`;
-    for(var i = 1; i < 32; i++) {
-        innerHTML += `<option>` + i + `</option>`;
-    }
-    innerHTML += `</select>`;
-    dayDiv.innerHTML = innerHTML;
+    const formDiv = document.createElement('div');
+    formDiv.className = "form-group col-md-6";
+    var innerHTML = `<input id="dateInput" type="text" class="form-control" id="formGroupExampleInput" placeholder="` + date + `">`
+    formDiv.innerHTML = innerHTML;
+    document.getElementById("dateInputForm").appendChild(formDiv);
 
-    document.getElementById("dateSelector").appendChild(dayDiv);
-
-    // const monthDiv = document.createElement('div');
-    // monthDiv.className = "form-group col-md-4";
-
-    // const yearDiv = document.createElement('div');
-    // yearDiv.className = "form-group col-md-4";
+    document.getElementById("dateInput").select();
+    $("#dateInput").bind("keypress", {}, keypressInBox);
 }
 
+
+
+function keypressInBox(e) {
+    var code = (e.keyCode ? e.keyCode : e.which);
+    if (code == 13) { //Enter keycode                        
+        e.preventDefault();
+
+        console.log("hello") // do something
+    }
+};
 
 
 $(window).on('load',function(){
@@ -57,10 +72,10 @@ $(window).on('load',function(){
     });
   }
 
-
+/* The th element in the table. Basically the table cell that stores the date. */
   function initEventDate(id) {
     var idHash = "#" + id.toString();
     $(idHash).click(function() {
-        createDateSelector(id);
+        createDateInput(id);
     });
   }
