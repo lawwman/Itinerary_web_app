@@ -52,11 +52,11 @@ https://www.youtube.com/watch?v=Zz6eOVaaelI
 
 ## Todo
 
-dateSelector - just make it a damn text form. easier to use? but have to ensure that the user types it in a good format so that we can auto key in new date when new row created.
-dateSelector - make it disappear when another eventDate is selected.
 when selecting empty tile - create new event option pops up.
 when selecting already created tile - delete, edit and duplicate options pop up.
 when selecting multiple tiles - delete option pop ups.
+
+make table cell resizable https://www.brainbell.com/javascript/making-resizable-table-js.html
 
 
 to bring list 
