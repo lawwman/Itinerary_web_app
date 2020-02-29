@@ -8,3 +8,6 @@ td:hover {
   display: block;
   overflow-x: auto;
   white-space: nowrap; }
+
+.columnSelector:hover {
+  border-right: 2px solid blue; }

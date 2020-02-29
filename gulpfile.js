@@ -1,4 +1,4 @@
-const { src, dest, watch, series} = require("gulp");
+const { src, dest, watch } = require("gulp");
 var browserSync = require("browser-sync").create();
 var sass = require("gulp-sass");
 
@@ -9,7 +9,8 @@ function convert_sass() {
 
 function serve() {
     browserSync.init({
-        server: "./src"
+        server: "./src",
+        online: true
     });
     
     watch('src/scss/*.scss').on("change", convert_sass);

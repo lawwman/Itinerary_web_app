@@ -1,24 +1,19 @@
-function createEventForm() {
+function createEventForm(id) {
     const form = document.createElement('form');
-    form.id = "create_event";
     form.innerHTML = `
     <div class="form-row">
         <div class="form-group col-md-4">
-            <label for="eventInput">Event Name</label>
-            <input type="text" class="form-control" id="eventInput" placeholder="Name of event. E.g. Going to Nara Park.">
-        </div>
-        <div class="form-group col-md-4">
             <label for="locationInput">Location</label>
-            <input type="text" class="form-control" id="locationInput" placeholder="Location. E.g. Nara Park">
+            <input type="text" class="form-control" id="` + id + `-locationInput" placeholder="Location. E.g. Nara Park">
         </div>
         <div class="form-group col-md-4">
             <label for="descriptionInput">Event Description</label>
-            <input type="text" class="form-control" id="descriptionInput" placeholder="look at deers.">
+            <input type="text" class="form-control" id="` + id + `-descriptionInput" placeholder="look at deers.">
         </div>
     </div>
     <div class="form-group  col-md-4">
         <label for="durationInput">Duration</label>
-        <select id="durationInput" class="form-control">
+        <select id="` + id + `-durationInput" class="form-control">
             <option selected>1 hour</option>
             <option>2 hours</option>
             <option>3 hours</option>
@@ -33,7 +28,7 @@ function createEventForm() {
             <option>12 hours</option>
         </select>
     </div>
-  <button type="submit" class="btn btn-primary">Add new event</button>`
+  <button id="` + id + `-submitEditForm" type="button" class="btn btn-primary">Add new event</button>`
 
   return form;
 }
@@ -46,5 +41,29 @@ function createDateInput(date) {
         <input id="dateInput" type="text" class="form-control" id="formGroupExampleInput" placeholder="` + date + `">
     </div>
     `
+    return div;
+}
+
+function createResizableDiv(height) {
+    var div = document.createElement('div');
+    div.className = 'columnSelector';
+    div.style.top = 0;
+    div.style.right = 0;
+    div.style.width = '5px';
+    div.style.position = 'absolute';
+    div.style.cursor = 'col-resize';
+    div.style.userSelect = 'none';
+    /* table height */
+    div.style.height = height - 18  + 'px';
+    return div;
+}
+
+function createEventDetailButtons(id) {
+    var div = document.createElement('div');
+    div.innerHTML = `
+    <button type="button" id="` + id + "-edit" + `" class="btn btn-outline-primary">Edit</button>
+    <button type="button" class="btn btn-outline-danger">Delete</button>
+    <button type="button" class="btn btn-outline-info">Duplicate</button>`
+
     return div;
 }

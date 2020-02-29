@@ -52,11 +52,16 @@ https://www.youtube.com/watch?v=Zz6eOVaaelI
 
 ## Todo
 
-when selecting empty tile - create new event option pops up.
-when selecting already created tile - delete, edit and duplicate options pop up.
+delete table cell feature
+- remove event detail from the local storage and clear the table cell.
+duplicate table cell feature
+
 when selecting multiple tiles - delete option pop ups.
 
-make table cell resizable https://www.brainbell.com/javascript/making-resizable-table-js.html
+Edit table cell feature
+- have to store event detail in localStorage
+- if no event form is submitted, restore previous edit cell info
+- add cancel button for when user does not want to edit table cell.
 
 
 to bring list 
