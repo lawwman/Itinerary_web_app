@@ -1,13 +1,10 @@
-td:hover {
-  background-color: #ebe9e9; }
+.mainTitleDiv {
+  background-color: #d2e8fa;
+  width: 20%;
+  margin: auto;
+  padding: 10px 10px;
+  border-radius: 25px; }
 
-.eventDate:hover {
-  background-color: #ebe9e9; }
-
-.table-wrapper {
-  display: block;
-  overflow-x: auto;
-  white-space: nowrap; }
-
-.columnSelector:hover {
-  border-right: 2px solid blue; }
+.mainTitle {
+  text-align: center;
+  font-style: italic; }

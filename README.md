@@ -5,7 +5,7 @@ keys = [trip_duration, events_list]
 
 ## Technologies used
 
-Bootstrap CSS for style.
+SASS for CSS styling
 Gulp, browser-sync for development convenience.
 Jquery - For client side code and it is also a requirement of Bootstrap.
 
@@ -14,17 +14,6 @@ Jquery - For client side code and it is also a requirement of Bootstrap.
 Install Node JS. NPM comes with node.
 run "npm install --global gulp cli" to install gulp globally (it also sets it in the path variable). We are now able to run the "gulp" command.
 run "npm install" in the same folder as the package.json to install the required packages.
-
-
-## Bootstrap 4 and JQuery
-
-I used bootstrap for the styling of the web app.
-
-### Resources I used:
-https://getbootstrap.com/docs/4.4/getting-started/introduction/
-https://getbootstrap.com/docs/4.4/components/alerts/
-https://www.digitalocean.com/community/tutorials/an-introduction-to-jquery
-https://www.w3schools.com/jquery/
 
 
 ## Gulp
@@ -52,19 +41,5 @@ https://www.youtube.com/watch?v=Zz6eOVaaelI
 
 ## Todo
 
-delete table cell feature
-- remove event detail from the local storage and clear the table cell.
-duplicate table cell feature
-
-when selecting multiple tiles - delete option pop ups.
-
-Edit table cell feature
-- have to store event detail in localStorage
-- if no event form is submitted, restore previous edit cell info
-- add cancel button for when user does not want to edit table cell.
-
-
-to bring list 
-- auto appends number of clothing depending on the number of days planned.
-- auto appends standard items - passport, toiletries etc.
-
+big bang
+vertical time line

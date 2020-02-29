@@ -1,20 +1,15 @@
-$hover_color: rgb(235, 233, 233);
 
+.mainTitleDiv {
+    background-color: #d2e8fa;
+    width: 20%;
+    margin: auto;
+    padding: 10px 10px;
+    border-radius: 25px;
 
-td:hover {
-    background-color: $hover_color;
 }
 
-.eventDate:hover {
-    background-color: $hover_color;
-}
 
-.table-wrapper {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
-}
-
-.columnSelector:hover {
-    border-right: 2px solid blue;
+.mainTitle {
+    text-align: center;
+    font-style: italic;
 }
