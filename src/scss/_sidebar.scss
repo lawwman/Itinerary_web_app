@@ -1,0 +1,28 @@
+.sidebar {
+    position: fixed;
+    top:6.2em;
+    left: 1em;
+    width: 200px;
+    margin-left: 1em;
+    background-color: $primaryTheme;
+    overflow: auto;
+    border-radius: 15px;
+
+    a {
+        display: block;
+        color: $primaryFont;
+        padding: 20px;
+        text-decoration: none;
+
+        &:hover {
+            background-color: #555;
+            color: white;
+        }
+    }
+
+    .bookmark {
+        border: solid 1px $primaryFont; border-radius: 15px;
+        height: 3em; width: 3em;
+        margin-left: 5px;
+    }
+}

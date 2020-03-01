@@ -1,10 +1,175 @@
-.mainTitleDiv {
-  background-color: #d2e8fa;
-  width: 20%;
-  margin: auto;
-  padding: 10px 10px;
-  border-radius: 25px; }
+.header {
+  position: fixed;
+  top: 0px;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  background-color: #dfdbd8;
+  width: 100%;
+  height: 5em; }
+  .header .mainTitle {
+    text-align: left;
+    padding-left: 2em;
+    color: #565c5e; }
 
-.mainTitle {
-  text-align: center;
-  font-style: italic; }
+.sidebar {
+  position: fixed;
+  top: 6.2em;
+  left: 1em;
+  width: 200px;
+  margin-left: 1em;
+  background-color: #dfdbd8;
+  overflow: auto;
+  border-radius: 15px; }
+  .sidebar a {
+    display: block;
+    color: #565c5e;
+    padding: 20px;
+    text-decoration: none; }
+    .sidebar a:hover {
+      background-color: #555;
+      color: white; }
+  .sidebar .bookmark {
+    border: solid 1px #565c5e;
+    border-radius: 15px;
+    height: 3em;
+    width: 3em;
+    margin-left: 5px; }
+
+.container {
+  /* position:relative so that the descendant class timeline has a reference to base margin-top from.
+    It seems to ignore the header (maybe because it is position:fixed). Hence container covers the whole screen. */
+  position: relative; }
+
+.timeline {
+  /* Absolute position is relative to .container wapper div. */
+  position: absolute;
+  top: 6.2em;
+  /* 6.2em from the very top of the screen. */
+  left: 232px;
+  /* Side bar has margin 1em (which is 16px) and width of 200px. Leave a gap of 1em btw side bar and timeline. */
+  /* Vertical line through the timeline class. */
+  /* Leave a trailing dotted line after the vertical line. */ }
+  .timeline::before {
+    position: absolute;
+    /* Absolute position is relative to .container wapper div. */
+    left: 300px;
+    /* Total 232 + 300 px away from extreme left of the screen. */
+    border-left: 4px solid #dfdbd8;
+    /* This is the vertical line of the timeline. */
+    margin-left: 1.4em;
+    content: "";
+    width: 100%;
+    height: 95%;
+    /* 95% height of the div. This adapts to how many elements are in the timeline class. Grows as the list of itinerary activities grows. */
+    z-index: 1; }
+  .timeline::after {
+    position: absolute;
+    /* Absolute position is relative to .container wapper div. */
+    top: 0px;
+    left: 300px;
+    border-left: 4px dotted #dfdbd8;
+    margin-left: 1.4em;
+    content: "";
+    width: 100%;
+    height: calc(95% + 40px);
+    /* Extra 40px of dotted line after end of main vertical timeline. */
+    z-index: 1; }
+  .timeline .timeline-block {
+    position: relative;
+    /* Cannot be absolute position because I want it to be a list. Position is relative to timeline class (232px from extreme left of screen). */
+    margin-bottom: 2em;
+    /* Gap between each block */
+    z-index: 2;
+    /* For the hover to work. */
+    /* For developer purposes. */ }
+    .timeline .timeline-block:hover {
+      background-color: red; }
+    .timeline .timeline-block .icon {
+      position: absolute;
+      /* Absolute relative to time-line block. */
+      /* 300px left of timeline-block. Total 232 + 300 px away from extreme left of the screen. Matches with the position of the vertical timeline. */
+      left: 300px;
+      height: 3em;
+      width: 3em;
+      display: inline-block;
+      background-color: #dfdbd8;
+      border-radius: 50%;
+      z-index: 2; }
+      .timeline .timeline-block .icon:hover {
+        opacity: 0.5; }
+      .timeline .timeline-block .icon .plus_icon {
+        height: 3em;
+        width: 3em; }
+    .timeline .timeline-block .add-card {
+      position: absolute;
+      /* Absolute relative to time-line block. */
+      /* 32px (2 * 32) left of timeline-block. Total 232 + 32 px away from extreme left of the screen. */
+      left: 2em;
+      display: inline-block;
+      border: 1px solid #c7c6c6;
+      border-radius: 5px;
+      box-shadow: -2px 2px 3px 3px #ccc;
+      max-height: 200px;
+      width: 15em;
+      padding: 4px; }
+      .timeline .timeline-block .add-card button {
+        display: inline-block;
+        margin: 3px; }
+    .timeline .timeline-block .date-wrapper {
+      position: relative;
+      left: 380px;
+      /* Total 232 + 300 px away from extreme left of the screen. */
+      width: 33em;
+      z-index: 2;
+      /* Had to set z-index for hover to work. Might be due to position:relative. */ }
+      .timeline .timeline-block .date-wrapper .timeline-date {
+        position: relative;
+        left: 200px;
+        /* Total 232 + 300 + 200 px away from extreme left of the screen. 200px left is relative from date-wrapper.  */
+        display: inline-block; }
+        .timeline .timeline-block .date-wrapper .timeline-date p {
+          font-weight: bold; }
+      .timeline .timeline-block .date-wrapper .button-wrapper {
+        position: absolute;
+        /* 520px away from card-wrapper's left border. */
+        left: 520px;
+        display: inline-block;
+        /* Inline-block with timeline-card. */ }
+        .timeline .timeline-block .date-wrapper .button-wrapper button {
+          text-align: center;
+          padding: 3px;
+          margin-bottom: 5px; }
+    .timeline .timeline-block .card-wrapper {
+      position: relative;
+      left: 380px;
+      /* Total 232 + 380 px away from extreme left of the screen. */
+      width: 32em;
+      padding-right: 5em;
+      z-index: 2;
+      /* Had to set z-index for hover to work. Might be due to position:relative. */ }
+      .timeline .timeline-block .card-wrapper .timeline-card {
+        position: relative;
+        display: inline-block;
+        border: 1px solid #c7c6c6;
+        padding: 10px;
+        border-radius: 5px;
+        max-height: 200px;
+        width: 30em;
+        overflow-x: auto;
+        box-shadow: 2px 2px 3px 3px #ccc; }
+        .timeline .timeline-block .card-wrapper .timeline-card h1 {
+          text-align: center;
+          text-decoration: underline; }
+        .timeline .timeline-block .card-wrapper .timeline-card p {
+          text-align: justify; }
+      .timeline .timeline-block .card-wrapper .button-wrapper {
+        position: absolute;
+        /* 520px away from card-wrapper's left border. */
+        left: 520px;
+        display: inline-block;
+        /* Inline-block with timeline-card. */ }
+        .timeline .timeline-block .card-wrapper .button-wrapper button {
+          text-align: center;
+          padding: 3px;
+          margin-bottom: 5px; }

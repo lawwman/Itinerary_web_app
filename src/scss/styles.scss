@@ -1,15 +1,152 @@
+$primaryTheme: #dfdbd8;
+$secondaryTheme: rgb(244, 67, 54);
+$primaryFont: #565c5e;
 
-.mainTitleDiv {
-    background-color: #d2e8fa;
-    width: 20%;
-    margin: auto;
-    padding: 10px 10px;
-    border-radius: 25px;
 
+@import "./header";
+@import "./sidebar";
+
+.container {
+    /* position:relative so that the descendant class timeline has a reference to base margin-top from.
+    It seems to ignore the header (maybe because it is position:fixed). Hence container covers the whole screen. */
+    position: relative; 
 }
 
+.timeline {
+    /* Absolute position is relative to .container wapper div. */
+    position: absolute; 
+    top: 6.2em; /* 6.2em from the very top of the screen. */
+    left: 232px; /* Side bar has margin 1em (which is 16px) and width of 200px. Leave a gap of 1em btw side bar and timeline. */
+    /* Vertical line through the timeline class. */
 
-.mainTitle {
-    text-align: center;
-    font-style: italic;
+    &::before {
+        position: absolute; /* Absolute position is relative to .container wapper div. */
+        left: 300px; /* Total 232 + 300 px away from extreme left of the screen. */
+        border-left: 4px solid $primaryTheme; /* This is the vertical line of the timeline. */
+        margin-left: 1.4em;
+        content: ""; // Needed for the border-left to appear. https://stackoverflow.com/questions/17067918/why-do-the-before-and-after-pseudo-elements-require-a-content-property
+        width: 100%;
+        height: 95%; /* 95% height of the div. This adapts to how many elements are in the timeline class. Grows as the list of itinerary activities grows. */
+        z-index: 1;
+    }
+    /* Leave a trailing dotted line after the vertical line. */
+    &::after {
+        position: absolute; /* Absolute position is relative to .container wapper div. */
+        top: 0px; left: 300px;
+        border-left: 4px dotted $primaryTheme;
+        margin-left: 1.4em;
+        content: ""; // Needed for the border-left to appear. https://stackoverflow.com/questions/17067918/why-do-the-before-and-after-pseudo-elements-require-a-content-property
+        width: 100%;
+        height: calc(95% + 40px); /* Extra 40px of dotted line after end of main vertical timeline. */
+        z-index: 1;
+    }
+
+    .timeline-block {
+        position: relative; /* Cannot be absolute position because I want it to be a list. Position is relative to timeline class (232px from extreme left of screen). */
+        margin-bottom: 2em; /* Gap between each block */
+        z-index: 2; /* For the hover to work. */
+
+        /* For developer purposes. */
+        &:hover {
+            background-color: red; 
+        }
+
+        .icon {
+            position: absolute; /* Absolute relative to time-line block. */
+            /* 300px left of timeline-block. Total 232 + 300 px away from extreme left of the screen. Matches with the position of the vertical timeline. */
+            left: 300px; 
+            height: 3em; width: 3em;
+            display: inline-block;
+            background-color: $primaryTheme;
+            border-radius: 50%;
+            z-index: 2;
+            &:hover {
+                opacity: 0.5;
+            }
+            .plus_icon  {
+                height: 3em; width: 3em;
+            }
+        }
+        
+        .add-card {
+            position: absolute; /* Absolute relative to time-line block. */
+            /* 32px (2 * 32) left of timeline-block. Total 232 + 32 px away from extreme left of the screen. */
+            left: 2em;
+            display: inline-block;
+            border: 1px solid #c7c6c6;
+            border-radius: 5px;
+            box-shadow: -2px 2px 3px 3px #ccc;
+            max-height: 200px; width: 15em;
+            padding: 4px;
+            button {
+                display: inline-block;
+                margin: 3px;
+            }
+        }
+        
+        .date-wrapper {
+            position: relative;
+            left: 380px; /* Total 232 + 300 px away from extreme left of the screen. */
+            width: 33em;
+            z-index: 2; /* Had to set z-index for hover to work. Might be due to position:relative. */
+
+            .timeline-date {
+                position: relative;
+                left: 200px; /* Total 232 + 300 + 200 px away from extreme left of the screen. 200px left is relative from date-wrapper.  */
+                display: inline-block;
+                p {
+                    font-weight: bold;
+                }
+            }
+
+            .button-wrapper {
+                position: absolute; /* 520px away from card-wrapper's left border. */
+                left: 520px;
+                display: inline-block; /* Inline-block with timeline-card. */
+                button {
+                    text-align: center;
+                    padding: 3px;
+                    margin-bottom: 5px;
+                }
+            }
+        }
+        
+        .card-wrapper {
+            position: relative;
+            left: 380px; /* Total 232 + 380 px away from extreme left of the screen. */
+            width: 32em;
+            padding-right: 5em;
+            z-index: 2; /* Had to set z-index for hover to work. Might be due to position:relative. */
+
+            .timeline-card {
+                position: relative;
+                display: inline-block; 
+                border: 1px solid #c7c6c6; padding: 10px;
+                border-radius: 5px;
+                max-height: 200px; width: 30em;
+                overflow-x: auto;
+                box-shadow: 2px 2px 3px 3px #ccc;
+                h1 {
+                    text-align: center;
+                    text-decoration: underline;
+                }
+                p {
+                    text-align: justify;
+                }
+            }
+
+            .button-wrapper {
+                position: absolute; /* 520px away from card-wrapper's left border. */
+                left: 520px;
+                display: inline-block; /* Inline-block with timeline-card. */
+    
+                button {
+                    text-align: center;
+                    padding: 3px;
+                    margin-bottom: 5px;
+                }
+            }
+        } 
+    }
 }
+
