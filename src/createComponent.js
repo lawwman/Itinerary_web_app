@@ -12,7 +12,7 @@ function timeLineBlock(args) {
         <button onclick="createNewTimeLineBlock([` + args[0] + `, 'card']);">Add new activity</button>
         <button>Add wet weather program</button>
     </div>
-    <div class="icon"><img src="./images/plus_icon.png" class="plus_icon"></div>`;
+    <div id="` + args[0] + `-icon" class="icon"><img src="./images/plus_icon.png" class="plus_icon"></div>`;
 
     if (args[1] == "date") innerHTML += innerHTMLOfDateWrapper(args[0]);
 

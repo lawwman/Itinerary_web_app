@@ -5,6 +5,7 @@ $primaryFont: #565c5e;
 
 @import "./header";
 @import "./sidebar";
+@import "./bringlist";
 
 .container {
     /* position:relative so that the descendant class timeline has a reference to base margin-top from.
@@ -61,7 +62,7 @@ $primaryFont: #565c5e;
             border-radius: 50%;
             z-index: 2;
             &:hover {
-                opacity: 0.5;
+                background-color: red; 
             }
             .plus_icon  {
                 height: 3em; width: 3em;

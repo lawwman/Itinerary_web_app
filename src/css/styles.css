@@ -36,6 +36,26 @@
     width: 3em;
     margin-left: 5px; }
 
+.bringList {
+  position: fixed;
+  top: 6.2em;
+  right: 25em;
+  width: 200px;
+  margin-right: 1em;
+  background-color: #dfdbd8;
+  overflow: auto;
+  border-radius: 15px; }
+  .bringList h2 {
+    text-align: center; }
+  .bringList span {
+    display: block;
+    color: #565c5e;
+    padding: 20px;
+    text-decoration: none; }
+    .bringList span:hover {
+      background-color: #555;
+      color: white; }
+
 .container {
   /* position:relative so that the descendant class timeline has a reference to base margin-top from.
     It seems to ignore the header (maybe because it is position:fixed). Hence container covers the whole screen. */
@@ -97,7 +117,7 @@
       border-radius: 50%;
       z-index: 2; }
       .timeline .timeline-block .icon:hover {
-        opacity: 0.5; }
+        background-color: red; }
       .timeline .timeline-block .icon .plus_icon {
         height: 3em;
         width: 3em; }

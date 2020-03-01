@@ -1,0 +1,26 @@
+.bringList {
+    position: fixed;
+    top:6.2em;
+    right: 25em;
+    width: 200px;
+    margin-right: 1em;
+    background-color: $primaryTheme;
+    overflow: auto;
+    border-radius: 15px;
+
+    h2 {
+        text-align: center;
+    }
+
+    span {
+        display: block;
+        color: $primaryFont;
+        padding: 20px;
+        text-decoration: none;
+
+        &:hover {
+            background-color: #555;
+            color: white;
+        }
+    }    
+}

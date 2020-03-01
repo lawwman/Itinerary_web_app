@@ -43,8 +43,4 @@ The "gulp" command from the command prompt will search for gulpfile.js and run i
 
 side bar for quick navigation
 
-plus button
-- clicking on it selects the whole segment of the timeline.
-- clicking on another plus button swaps it with the currently selected one.
-
 add wet weather event
